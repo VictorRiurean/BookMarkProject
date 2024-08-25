@@ -5,57 +5,51 @@
 //  Created by Victor on 25/08/2024.
 //
 
+import Models
 import SwiftUI
 import SwiftData
 
+
 struct ContentView: View {
+    
+    // MARK: Environment
+    
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    
+    
+    // MARK: Query
+    
+    @Query private var learningAssets: [LearningAsset]
+    
+    
+    // MARK: Body
 
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+                ForEach(learningAssets, id: \.url) { asset in
+                    Text(asset.title)
                 }
                 .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+    
+    
+    // MARK: Private methods
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(learningAssets[index])
             }
         }
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: LearningAsset.self, inMemory: true)
 }
