@@ -15,6 +15,10 @@
 		57C025052C7B7F5F00CBACD6 /* BookmarkProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025042C7B7F5F00CBACD6 /* BookmarkProjectTests.swift */; };
 		57C0250F2C7B7F5F00CBACD6 /* BookmarkProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C0250E2C7B7F5F00CBACD6 /* BookmarkProjectUITests.swift */; };
 		57C025112C7B7F5F00CBACD6 /* BookmarkProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025102C7B7F5F00CBACD6 /* BookmarkProjectUITestsLaunchTests.swift */; };
+		57C025242C7BA46600CBACD6 /* DesignSystems in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025232C7BA46600CBACD6 /* DesignSystems */; };
+		57C025262C7BA46A00CBACD6 /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025252C7BA46A00CBACD6 /* Environment */; };
+		57C025282C7BA46D00CBACD6 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025272C7BA46D00CBACD6 /* Models */; };
+		57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025292C7BA47100CBACD6 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		57C0250A2C7B7F5F00CBACD6 /* BookmarkProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookmarkProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C0250E2C7B7F5F00CBACD6 /* BookmarkProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkProjectUITests.swift; sourceTree = "<group>"; };
 		57C025102C7B7F5F00CBACD6 /* BookmarkProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57C0251E2C7BA18400CBACD6 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = ../Networking; sourceTree = "<group>"; };
+		57C0251F2C7BA27D00CBACD6 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = ../Models; sourceTree = "<group>"; };
+		57C025202C7BA2E700CBACD6 /* DesignSystems */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystems; path = ../DesignSystems; sourceTree = "<group>"; };
+		57C025212C7BA34900CBACD6 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Environment; path = ../Environment; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C025282C7BA46D00CBACD6 /* Models in Frameworks */,
+				57C025262C7BA46A00CBACD6 /* Environment in Frameworks */,
+				57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */,
+				57C025242C7BA46600CBACD6 /* DesignSystems in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +91,12 @@
 				57C024F02C7B7F5C00CBACD6 /* BookmarkProject */,
 				57C025032C7B7F5F00CBACD6 /* BookmarkProjectTests */,
 				57C0250D2C7B7F5F00CBACD6 /* BookmarkProjectUITests */,
+				57C025202C7BA2E700CBACD6 /* DesignSystems */,
+				57C025212C7BA34900CBACD6 /* Environment */,
+				57C0251F2C7BA27D00CBACD6 /* Models */,
+				57C0251E2C7BA18400CBACD6 /* Networking */,
 				57C024EF2C7B7F5C00CBACD6 /* Products */,
+				57C025222C7BA46600CBACD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +147,13 @@
 			path = BookmarkProjectUITests;
 			sourceTree = "<group>";
 		};
+		57C025222C7BA46600CBACD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +170,12 @@
 			dependencies = (
 			);
 			name = BookmarkProject;
+			packageProductDependencies = (
+				57C025232C7BA46600CBACD6 /* DesignSystems */,
+				57C025252C7BA46A00CBACD6 /* Environment */,
+				57C025272C7BA46D00CBACD6 /* Models */,
+				57C025292C7BA47100CBACD6 /* Networking */,
+			);
 			productName = BookmarkProject;
 			productReference = 57C024EE2C7B7F5C00CBACD6 /* BookmarkProject.app */;
 			productType = "com.apple.product-type.application";
@@ -592,6 +622,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57C025232C7BA46600CBACD6 /* DesignSystems */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystems;
+		};
+		57C025252C7BA46A00CBACD6 /* Environment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Environment;
+		};
+		57C025272C7BA46D00CBACD6 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		57C025292C7BA47100CBACD6 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57C024E62C7B7F5C00CBACD6 /* Project object */;
 }

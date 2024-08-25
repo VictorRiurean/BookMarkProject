@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 @main
 struct BookmarkProjectApp: App {
     var sharedModelContainer: ModelContainer = {
