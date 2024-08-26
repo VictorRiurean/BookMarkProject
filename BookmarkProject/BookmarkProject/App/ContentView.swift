@@ -5,11 +5,13 @@
 //  Created by Victor on 25/08/2024.
 //
 
+import DesignSystems
 import Models
 import SwiftUI
 import SwiftData
 
 
+@MainActor
 struct ContentView: View {
     
     // MARK: Environment
@@ -17,33 +19,27 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     
     
-    // MARK: Query
+    // MARK: State properties
     
-    @Query private var learningAssets: [LearningAsset]
+    @State private var selectedTab: Tab = .home
+    @State private var theme = Theme.shared
     
     
     // MARK: Body
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(learningAssets, id: \.url) { asset in
-                    Text(asset.title)
-                }
-                .onDelete(perform: deleteItems)
+        TabView(selection: $selectedTab) {
+            ForEach(Tab.allCases) { tab in
+                tab.makeContentView()
+                    .tabItem {
+                        tab.label
+                    }
+                    .tag(tab)
+                    .toolbarBackground(.ultraThinMaterial, for: .tabBar)
             }
         }
-    }
-    
-    
-    // MARK: Private methods
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(learningAssets[index])
-            }
-        }
+        .applyTheme(theme)
+        .withEnvironments()
     }
 }
 
@@ -51,5 +47,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: LearningAsset.self, inMemory: true)
 }

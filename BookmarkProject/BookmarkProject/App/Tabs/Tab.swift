@@ -5,6 +5,7 @@
 //  Created by Victor on 25/08/2024.
 //
 
+import Settings
 import SwiftUI
 
 
@@ -15,6 +16,7 @@ enum Tab: Int, Identifiable, CaseIterable {
     
     case home
     case favourites
+    case settings
     
     
     // MARK: Public properties
@@ -33,6 +35,8 @@ enum Tab: Int, Identifiable, CaseIterable {
             Label("Home", systemImage: "house")
         case .favourites:
             Label("Favourites", systemImage: "star.fill")
+        case .settings:
+            Label("Settings", systemImage: "gear")
         }
     }
     
@@ -43,6 +47,8 @@ enum Tab: Int, Identifiable, CaseIterable {
             Text("Home")
         case .favourites:
             Text("Favourites")
+        case .settings:
+            SettingsScreen()
         }
     }
 }

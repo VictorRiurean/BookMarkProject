@@ -33,8 +33,8 @@ extension View {
     }
     
     func withEnvironments() -> some View {
-//        environment()
-        EmptyView()
+        environment(UserPreferences.shared)
+            .environment(Theme.shared)
     }
 }
 

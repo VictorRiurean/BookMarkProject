@@ -37,25 +37,11 @@ struct BookmarkProjectApp: App {
     }()
     
     
-    // MARK: State properties
-    
-    @State private var selectedTab: Tab = .home
-    
-    
     // MARK: Body
 
     var body: some Scene {
         WindowGroup {
-            TabView(selection: $selectedTab) {
-                ForEach(Tab.allCases) { tab in
-                    tab.makeContentView()
-                        .tabItem {
-                            tab.label
-                        }
-                        .tag(tab)
-                        .toolbarBackground(.ultraThinMaterial, for: .tabBar)
-                }
-            }
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

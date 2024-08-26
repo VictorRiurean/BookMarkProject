@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A3FE812C7CC494001DCDB3 /* DesignSystems in Frameworks */ = {isa = PBXBuildFile; productRef = 57A3FE802C7CC494001DCDB3 /* DesignSystems */; };
+		57A3FE842C7CD6EE001DCDB3 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 57A3FE832C7CD6EE001DCDB3 /* Settings */; };
 		57A7BD482C7C8300003EA1FD /* View+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7BD472C7C8300003EA1FD /* View+Routing.swift */; };
 		57C024F22C7B7F5C00CBACD6 /* BookmarkProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */; };
 		57C024F42C7B7F5C00CBACD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C024F32C7B7F5C00CBACD6 /* ContentView.swift */; };
@@ -15,7 +17,6 @@
 		57C025052C7B7F5F00CBACD6 /* BookmarkProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025042C7B7F5F00CBACD6 /* BookmarkProjectTests.swift */; };
 		57C0250F2C7B7F5F00CBACD6 /* BookmarkProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C0250E2C7B7F5F00CBACD6 /* BookmarkProjectUITests.swift */; };
 		57C025112C7B7F5F00CBACD6 /* BookmarkProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025102C7B7F5F00CBACD6 /* BookmarkProjectUITestsLaunchTests.swift */; };
-		57C025242C7BA46600CBACD6 /* DesignSystems in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025232C7BA46600CBACD6 /* DesignSystems */; };
 		57C025262C7BA46A00CBACD6 /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025252C7BA46A00CBACD6 /* Environment */; };
 		57C025282C7BA46D00CBACD6 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025272C7BA46D00CBACD6 /* Models */; };
 		57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025292C7BA47100CBACD6 /* Networking */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57A3FE822C7CD67D001DCDB3 /* Settings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Settings; path = ../Settings; sourceTree = "<group>"; };
 		57A7BD472C7C8300003EA1FD /* View+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Routing.swift"; sourceTree = "<group>"; };
 		57C024EE2C7B7F5C00CBACD6 /* BookmarkProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookmarkProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkProjectApp.swift; sourceTree = "<group>"; };
@@ -64,9 +66,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57C025282C7BA46D00CBACD6 /* Models in Frameworks */,
+				57A3FE842C7CD6EE001DCDB3 /* Settings in Frameworks */,
 				57C025262C7BA46A00CBACD6 /* Environment in Frameworks */,
 				57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */,
-				57C025242C7BA46600CBACD6 /* DesignSystems in Frameworks */,
+				57A3FE812C7CC494001DCDB3 /* DesignSystems in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +100,7 @@
 				57C025212C7BA34900CBACD6 /* Environment */,
 				57C0251F2C7BA27D00CBACD6 /* Models */,
 				57C0251E2C7BA18400CBACD6 /* Networking */,
+				57A3FE822C7CD67D001DCDB3 /* Settings */,
 				57C024EF2C7B7F5C00CBACD6 /* Products */,
 				57C025222C7BA46600CBACD6 /* Frameworks */,
 			);
@@ -214,10 +218,11 @@
 			);
 			name = BookmarkProject;
 			packageProductDependencies = (
-				57C025232C7BA46600CBACD6 /* DesignSystems */,
 				57C025252C7BA46A00CBACD6 /* Environment */,
 				57C025272C7BA46D00CBACD6 /* Models */,
 				57C025292C7BA47100CBACD6 /* Networking */,
+				57A3FE802C7CC494001DCDB3 /* DesignSystems */,
+				57A3FE832C7CD6EE001DCDB3 /* Settings */,
 			);
 			productName = BookmarkProject;
 			productReference = 57C024EE2C7B7F5C00CBACD6 /* BookmarkProject.app */;
@@ -676,9 +681,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		57C025232C7BA46600CBACD6 /* DesignSystems */ = {
+		57A3FE802C7CC494001DCDB3 /* DesignSystems */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystems;
+		};
+		57A3FE832C7CD6EE001DCDB3 /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Settings;
 		};
 		57C025252C7BA46A00CBACD6 /* Environment */ = {
 			isa = XCSwiftPackageProductDependency;
