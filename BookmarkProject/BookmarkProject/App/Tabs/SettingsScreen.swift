@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  SettingsScreen.swift
 //  BookmarkProject
 //
 //  Created by Victor on 26/08/2024.
@@ -12,7 +12,7 @@ import SwiftUI
 
 
 @MainActor @Observable
-class DisplaySettingsLocalValues {
+class SettingsLocalValues {
     var tintColor = Theme.shared.tintColor
     var primaryBackgroundColor = Theme.shared.primaryBackgroundColor
     var secondaryBackgroundColor = Theme.shared.secondaryBackgroundColor
@@ -23,7 +23,7 @@ class DisplaySettingsLocalValues {
 
 
 @MainActor
-public struct SettingsScreen: View {
+struct SettingsScreen: View {
     
     typealias FontState = Theme.FontState
     
@@ -37,14 +37,13 @@ public struct SettingsScreen: View {
     
     // MARK: State properties
     
-    @State private var localValues = DisplaySettingsLocalValues()
+    @State private var localValues = SettingsLocalValues()
     @State private var routerPath = RouterPath()
-    @State private var isFontSelectorPresented = false
    
     
     // MARK: Body
     
-    public var body: some View {
+    var body: some View {
         NavigationStack(path: $routerPath.path) {
             ZStack(alignment: .top) {
                 Form {
@@ -59,12 +58,6 @@ public struct SettingsScreen: View {
                 .navigationTitle("Settings")
                 .scrollContentBackground(.hidden)
                 .background(theme.secondaryBackgroundColor)
-                .navigationDestination(
-                    isPresented: $isFontSelectorPresented,
-                    destination: {
-                        FontPicker()
-                    }
-                )
                 .task(id: localValues.tintColor) {
                     try? await Task.sleep(for: .microseconds(500))
                     
@@ -96,13 +89,10 @@ public struct SettingsScreen: View {
                     theme.fontSizeScale = localValues.fontSizeScale
                 }
             }
+            .withAppRouter()
+            .withSheetDestinations(sheetDestinations: $routerPath.presentedSheet)
         }
     }
-    
-    
-    // MARK: Lifecycke
-    
-    public init() { }
     
     
     // MARK: Subviews
@@ -172,7 +162,8 @@ public struct SettingsScreen: View {
                         case .system:
                             theme.chosenFont = nil
                         case .custom:
-                            isFontSelectorPresented = true
+                            // MARK: Navigation
+                            routerPath.presentedSheet = .fontPicker
                         }
                     }
                 )
@@ -217,14 +208,20 @@ public struct SettingsScreen: View {
     }
     
     private var themeSelectorButton: some View {
-        NavigationLink(destination: ThemePreviewView()) {
-            HStack {
-                Text("Theme")
-                
-                Spacer()
-                
-                Text(theme.selectedSet.rawValue)
-            }
+        HStack {
+            Text("Theme")
+            
+            Spacer()
+            
+            Button(
+                action: {
+                    // MARK: Navigation
+                    routerPath.navigate(to: .themePreview)
+                },
+                label: {
+                    Text(theme.selectedSet.rawValue)
+                }
+            )
         }
     }
 }

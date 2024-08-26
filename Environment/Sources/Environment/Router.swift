@@ -5,16 +5,17 @@ import SwiftUI
 
 public enum RouterDestination: Hashable {
     case assetDetails(url: String)
+    case themePreview
 }
 
 
 public enum SheetDestination: Identifiable {
-    case example
+    case fontPicker
     
     public var id: String {
         switch self {
-        case .example:
-            "example"
+        case .fontPicker:
+            "fontPicker"
         }
     }
 }

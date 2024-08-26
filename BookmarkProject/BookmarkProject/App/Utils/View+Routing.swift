@@ -19,6 +19,9 @@ extension View {
             switch destination {
             case .assetDetails(let url):
                 Text(url)
+            case .themePreview:
+                ThemePreviewView()
+                    .withEnvironments()
             }
         }
     }
@@ -26,8 +29,8 @@ extension View {
     func withSheetDestinations(sheetDestinations: Binding<SheetDestination?>) -> some View {
         sheet(item: sheetDestinations) { destination in
             switch destination {
-            case .example:
-                Text("Sheet example")
+            case .fontPicker:
+                FontPicker()
             }
         }
     }
@@ -37,4 +40,3 @@ extension View {
             .environment(Theme.shared)
     }
 }
-

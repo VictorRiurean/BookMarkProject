@@ -30,12 +30,12 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             ForEach(Tab.allCases) { tab in
-                tab.makeContentView()
+                tab
+                    .makeContentView()
                     .tabItem {
                         tab.label
                     }
                     .tag(tab)
-                    .toolbarBackground(.ultraThinMaterial, for: .tabBar)
             }
         }
         .applyTheme(theme)
