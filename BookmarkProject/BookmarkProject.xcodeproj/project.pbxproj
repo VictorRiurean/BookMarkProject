@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A7BD482C7C8300003EA1FD /* View+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7BD472C7C8300003EA1FD /* View+Routing.swift */; };
 		57C024F22C7B7F5C00CBACD6 /* BookmarkProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */; };
 		57C024F42C7B7F5C00CBACD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C024F32C7B7F5C00CBACD6 /* ContentView.swift */; };
 		57C024F82C7B7F5F00CBACD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57C024F72C7B7F5F00CBACD6 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		57C025262C7BA46A00CBACD6 /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025252C7BA46A00CBACD6 /* Environment */; };
 		57C025282C7BA46D00CBACD6 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025272C7BA46D00CBACD6 /* Models */; };
 		57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025292C7BA47100CBACD6 /* Networking */; };
+		57C025322C7BD1C500CBACD6 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025312C7BD1C500CBACD6 /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57A7BD472C7C8300003EA1FD /* View+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Routing.swift"; sourceTree = "<group>"; };
 		57C024EE2C7B7F5C00CBACD6 /* BookmarkProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookmarkProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkProjectApp.swift; sourceTree = "<group>"; };
 		57C024F32C7B7F5C00CBACD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		57C0251F2C7BA27D00CBACD6 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = ../Models; sourceTree = "<group>"; };
 		57C025202C7BA2E700CBACD6 /* DesignSystems */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystems; path = ../DesignSystems; sourceTree = "<group>"; };
 		57C025212C7BA34900CBACD6 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Environment; path = ../Environment; sourceTree = "<group>"; };
+		57C025312C7BD1C500CBACD6 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +115,8 @@
 		57C024F02C7B7F5C00CBACD6 /* BookmarkProject */ = {
 			isa = PBXGroup;
 			children = (
-				57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */,
-				57C024F32C7B7F5C00CBACD6 /* ContentView.swift */,
-				57C024F72C7B7F5F00CBACD6 /* Assets.xcassets */,
-				57C024F92C7B7F5F00CBACD6 /* Preview Content */,
+				57C0252B2C7BCFF500CBACD6 /* App */,
+				57C0252D2C7BD05100CBACD6 /* Resources */,
 			);
 			path = BookmarkProject;
 			sourceTree = "<group>";
@@ -149,6 +151,50 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57C0252B2C7BCFF500CBACD6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57C024F12C7B7F5C00CBACD6 /* BookmarkProjectApp.swift */,
+				57C024F32C7B7F5C00CBACD6 /* ContentView.swift */,
+				57C0252E2C7BD0B800CBACD6 /* Tabs */,
+				57C0252F2C7BD0C900CBACD6 /* Utils */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57C0252D2C7BD05100CBACD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57C025302C7BD0E400CBACD6 /* Fonts */,
+				57C024F72C7B7F5F00CBACD6 /* Assets.xcassets */,
+				57C024F92C7B7F5F00CBACD6 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		57C0252E2C7BD0B800CBACD6 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				57C025312C7BD1C500CBACD6 /* Tab.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		57C0252F2C7BD0C900CBACD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				57A7BD472C7C8300003EA1FD /* View+Routing.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		57C025302C7BD0E400CBACD6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C025322C7BD1C500CBACD6 /* Tab.swift in Sources */,
 				57C024F42C7B7F5C00CBACD6 /* ContentView.swift in Sources */,
 				57C024F22C7B7F5C00CBACD6 /* BookmarkProjectApp.swift in Sources */,
+				57A7BD482C7C8300003EA1FD /* View+Routing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookmarkProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BookmarkProject/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y3X6GMAKF6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -484,7 +532,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookmarkProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BookmarkProject/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y3X6GMAKF6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
