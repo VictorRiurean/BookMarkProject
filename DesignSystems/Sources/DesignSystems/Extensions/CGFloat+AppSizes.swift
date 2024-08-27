@@ -22,4 +22,5 @@ public extension CGFloat {
     static let xLarge: CGFloat = 32.0
     static let xxLarge: CGFloat = 40.0
     static let xxxLarge: CGFloat = 60.0
+    static let huge: CGFloat = 180.0
 }

@@ -22,4 +22,5 @@ public extension Double {
     static let xLarge: Double = 32.0
     static let xxLarge: Double = 40.0
     static let xxxLarge: Double = 60.0
+    static let huge: Double = 180.0
 }
