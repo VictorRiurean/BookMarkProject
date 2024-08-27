@@ -21,6 +21,11 @@
 		57C025282C7BA46D00CBACD6 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025272C7BA46D00CBACD6 /* Models */; };
 		57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 57C025292C7BA47100CBACD6 /* Networking */; };
 		57C025322C7BD1C500CBACD6 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C025312C7BD1C500CBACD6 /* Tab.swift */; };
+		57D2BB5F2C7DD01300B612A6 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2BB5E2C7DD01300B612A6 /* HomeScreen.swift */; };
+		57D2BB632C7DD52600B612A6 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 57D2BB622C7DD52600B612A6 /* NukeUI */; };
+		57D2BB652C7DE4EF00B612A6 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 57D2BB642C7DE4EF00B612A6 /* Home */; };
+		57D2BB682C7DF24900B612A6 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 57D2BB672C7DF24900B612A6 /* AsyncAlgorithms */; };
+		57D2BB6A2C7DF25E00B612A6 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2BB692C7DF25E00B612A6 /* HomeScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,9 @@
 		57C025202C7BA2E700CBACD6 /* DesignSystems */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystems; path = ../DesignSystems; sourceTree = "<group>"; };
 		57C025212C7BA34900CBACD6 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Environment; path = ../Environment; sourceTree = "<group>"; };
 		57C025312C7BD1C500CBACD6 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		57D2BB5E2C7DD01300B612A6 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		57D2BB602C7DD22000B612A6 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Home; path = ../Home; sourceTree = "<group>"; };
+		57D2BB692C7DF25E00B612A6 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +73,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D2BB632C7DD52600B612A6 /* NukeUI in Frameworks */,
 				57C025282C7BA46D00CBACD6 /* Models in Frameworks */,
 				57C025262C7BA46A00CBACD6 /* Environment in Frameworks */,
 				57C0252A2C7BA47100CBACD6 /* Networking in Frameworks */,
 				57A3FE812C7CC494001DCDB3 /* DesignSystems in Frameworks */,
+				57D2BB652C7DE4EF00B612A6 /* Home in Frameworks */,
+				57D2BB682C7DF24900B612A6 /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +108,7 @@
 				57C0250D2C7B7F5F00CBACD6 /* BookmarkProjectUITests */,
 				57C025202C7BA2E700CBACD6 /* DesignSystems */,
 				57C025212C7BA34900CBACD6 /* Environment */,
+				57D2BB602C7DD22000B612A6 /* Home */,
 				57C0251F2C7BA27D00CBACD6 /* Models */,
 				57C0251E2C7BA18400CBACD6 /* Networking */,
 				57C024EF2C7B7F5C00CBACD6 /* Products */,
@@ -179,8 +191,10 @@
 		57C0252E2C7BD0B800CBACD6 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				57D2BB572C7DB27800B612A6 /* CreateResource */,
+				57D2BB562C7DB27300B612A6 /* Home */,
+				57D2BB552C7DB26D00B612A6 /* Settings */,
 				57C025312C7BD1C500CBACD6 /* Tab.swift */,
-				57ACD6892C7D1A65003611DA /* SettingsScreen.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -198,6 +212,78 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		57D2BB552C7DB26D00B612A6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57D2BB582C7DB2C700B612A6 /* Screens */,
+				57D2BB592C7DB2CD00B612A6 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		57D2BB562C7DB27300B612A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				57D2BB5A2C7DB2D700B612A6 /* Screens */,
+				57D2BB5B2C7DB2DD00B612A6 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		57D2BB572C7DB27800B612A6 /* CreateResource */ = {
+			isa = PBXGroup;
+			children = (
+				57D2BB5D2C7DB2E700B612A6 /* Screens */,
+				57D2BB5C2C7DB2E300B612A6 /* Views */,
+			);
+			path = CreateResource;
+			sourceTree = "<group>";
+		};
+		57D2BB582C7DB2C700B612A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				57ACD6892C7D1A65003611DA /* SettingsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		57D2BB592C7DB2CD00B612A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57D2BB5A2C7DB2D700B612A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				57D2BB5E2C7DD01300B612A6 /* HomeScreen.swift */,
+				57D2BB692C7DF25E00B612A6 /* HomeScreenViewModel.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		57D2BB5B2C7DB2DD00B612A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57D2BB5C2C7DB2E300B612A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57D2BB5D2C7DB2E700B612A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +307,9 @@
 				57C025272C7BA46D00CBACD6 /* Models */,
 				57C025292C7BA47100CBACD6 /* Networking */,
 				57A3FE802C7CC494001DCDB3 /* DesignSystems */,
+				57D2BB622C7DD52600B612A6 /* NukeUI */,
+				57D2BB642C7DE4EF00B612A6 /* Home */,
+				57D2BB672C7DF24900B612A6 /* AsyncAlgorithms */,
 			);
 			productName = BookmarkProject;
 			productReference = 57C024EE2C7B7F5C00CBACD6 /* BookmarkProject.app */;
@@ -294,6 +383,10 @@
 				Base,
 			);
 			mainGroup = 57C024E52C7B7F5C00CBACD6;
+			packageReferences = (
+				57D2BB612C7DD52600B612A6 /* XCRemoteSwiftPackageReference "Nuke" */,
+				57D2BB662C7DF24900B612A6 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+			);
 			productRefGroup = 57C024EF2C7B7F5C00CBACD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +431,8 @@
 			files = (
 				57ACD68A2C7D1A65003611DA /* SettingsScreen.swift in Sources */,
 				57C025322C7BD1C500CBACD6 /* Tab.swift in Sources */,
+				57D2BB6A2C7DF25E00B612A6 /* HomeScreenViewModel.swift in Sources */,
+				57D2BB5F2C7DD01300B612A6 /* HomeScreen.swift in Sources */,
 				57C024F42C7B7F5C00CBACD6 /* ContentView.swift in Sources */,
 				57C024F22C7B7F5C00CBACD6 /* BookmarkProjectApp.swift in Sources */,
 				57A7BD482C7C8300003EA1FD /* View+Routing.swift in Sources */,
@@ -679,6 +774,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		57D2BB612C7DD52600B612A6 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+		57D2BB662C7DF24900B612A6 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		57A3FE802C7CC494001DCDB3 /* DesignSystems */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -695,6 +809,20 @@
 		57C025292C7BA47100CBACD6 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		57D2BB622C7DD52600B612A6 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57D2BB612C7DD52600B612A6 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		57D2BB642C7DE4EF00B612A6 /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
+		57D2BB672C7DF24900B612A6 /* AsyncAlgorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57D2BB662C7DF24900B612A6 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
+			productName = AsyncAlgorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

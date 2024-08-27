@@ -8,7 +8,7 @@ let package = Package(
     name: "DesignSystems",
     defaultLocalization: "en",
     platforms: [
-      .iOS(.v17),
+        .iOS(.v17),
     ],
     products: [
         .library(
@@ -18,14 +18,16 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Environment", path: "../Environment"),
-        .package(name: "Models", path: "../Models")
+        .package(name: "Models", path: "../Models"),
+        .package(url: "https://github.com/kean/Nuke", from: "12.8.0")
     ],
     targets: [
         .target(
             name: "DesignSystems",
             dependencies: [
                 .product(name: "Environment", package: "Environment"),
-                .product(name: "Models", package: "Models")
+                .product(name: "Models", package: "Models"),
+                .product(name: "NukeUI", package: "Nuke")
             ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
