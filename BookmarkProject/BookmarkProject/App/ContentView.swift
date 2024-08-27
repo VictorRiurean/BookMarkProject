@@ -14,11 +14,6 @@ import SwiftData
 @MainActor
 struct ContentView: View {
     
-    // MARK: Environment
-    
-    @Environment(\.modelContext) private var modelContext
-    
-    
     // MARK: State properties
     
     @State private var selectedTab: Tab = .home

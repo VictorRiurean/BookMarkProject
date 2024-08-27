@@ -5,7 +5,6 @@
 //  Created by Victor on 25/08/2024.
 //
 
-import Settings
 import SwiftUI
 
 
@@ -44,7 +43,7 @@ enum Tab: Int, Identifiable, CaseIterable {
     func makeContentView() -> some View {
         switch self {
         case .home:
-            Text("Home")
+            HomeScreen()
         case .favourites:
             Text("Favourites")
         case .settings:

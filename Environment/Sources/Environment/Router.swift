@@ -4,7 +4,7 @@ import SwiftUI
 
 
 public enum RouterDestination: Hashable {
-    case assetDetails(url: String)
+    case assetDetails(asset: LearningAsset)
     case themePreview
 }
 

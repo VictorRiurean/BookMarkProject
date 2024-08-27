@@ -8,6 +8,7 @@
 import DesignSystems
 import Environment
 import Models
+import Home
 import SwiftData
 import SwiftUI
 
@@ -17,8 +18,8 @@ extension View {
     func withAppRouter() -> some View {
         navigationDestination(for: RouterDestination.self) { destination in
             switch destination {
-            case .assetDetails(let url):
-                Text(url)
+            case .assetDetails(let asset):
+                LearningAssetDetailsScreen(asset: asset)
             case .themePreview:
                 ThemePreviewView()
                     .withEnvironments()
