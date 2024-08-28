@@ -18,7 +18,7 @@ public final class LearningAsset {
     public var tags: [String]
     public var imageUrl: String?
     
-    init(
+    public init(
         url: String,
         type: LearningAssetType,
         title: String,
@@ -38,10 +38,12 @@ public final class LearningAsset {
 }
 
 
-public enum LearningAssetType: Codable {
+public enum LearningAssetType: String, CaseIterable, Codable, Hashable {
     case article
+    case course
+    case podcast
     case video
-    case other(value: String)
+    case other
 }
 
 
@@ -74,7 +76,7 @@ extension LearningAsset: @unchecked Sendable {
         ),
         LearningAsset(
             url: "https://www.example.com/swift-tutorial",
-            type: .other(value: "Tutorial"),
+            type: .course,
             title: "Build Your First iOS App",
             content: "In this tutorial, you'll learn how to build your first iOS app using Swift and Xcode...",
             contentHtml: "<h1>Build Your First iOS App</h1><p>In this tutorial, you'll learn how to build your first iOS app using <em>Swift</em> and <em>Xcode</em>...</p>",
@@ -91,14 +93,14 @@ extension LearningAsset: @unchecked Sendable {
         ),
         LearningAsset(
             url: "https://www.example.com/swift-podcast",
-            type: .other(value: "Podcast"),
+            type: .podcast,
             title: "The Future of Swift",
             content: "In this podcast episode, experts discuss the future of Swift and its impact on the development community...",
             tags: ["Swift", "Podcast", "Development"]
         ),
         LearningAsset(
             url: "https://www.example.com/swift-course",
-            type: .other(value: "Course"),
+            type: .course,
             title: "Complete Swift Programming Course",
             contentHtml: "<h2>Course Overview</h2><p>This course covers everything from the basics to advanced topics in Swift programming...</p>",
             tags: ["Swift", "Course", "Programming", "Advanced"],
