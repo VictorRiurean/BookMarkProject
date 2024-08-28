@@ -14,7 +14,7 @@ enum Tab: Int, Identifiable, CaseIterable {
     // MARK: Cases
     
     case home
-    case favourites
+    case newResource
     case settings
     
     
@@ -32,8 +32,8 @@ enum Tab: Int, Identifiable, CaseIterable {
         switch self {
         case .home:
             Label("Home", systemImage: "house")
-        case .favourites:
-            Label("Favourites", systemImage: "star.fill")
+        case .newResource:
+            Label("New resource", systemImage: "hammer.fill")
         case .settings:
             Label("Settings", systemImage: "gear")
         }
@@ -44,8 +44,8 @@ enum Tab: Int, Identifiable, CaseIterable {
         switch self {
         case .home:
             HomeScreen()
-        case .favourites:
-            Text("Favourites")
+        case .newResource:
+            NewResourceScreen()
         case .settings:
             SettingsScreen()
         }
