@@ -9,9 +9,11 @@ import Models
 
 
 extension Client: AssetService {
-    public func getAsset(url: String) async throws -> LearningAssetResponse {
+    public func getAsset(url: String) async throws -> LearningAsset {
         do {
-            return try await get(endpoint: AssetEndpoint.asset(url: url))
+            let response: LearningAssetResponse = try await get(endpoint: AssetEndpoint.asset(url: url))
+            
+            return .init(response: response)
         } catch {
             throw error
         }

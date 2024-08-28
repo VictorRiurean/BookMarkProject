@@ -57,7 +57,7 @@ public enum LearningAssetType: String, CaseIterable, Codable, Hashable {
 
 
 extension LearningAsset {
-    convenience init(response: LearningAssetResponse) {
+    public convenience init(response: LearningAssetResponse) {
         self.init(
             url: response.url,
             type: response.type,

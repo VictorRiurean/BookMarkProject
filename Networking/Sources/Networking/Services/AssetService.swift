@@ -9,5 +9,5 @@ import Models
 
 
 public protocol AssetService {
-    func getAsset(url: String) async throws -> LearningAssetResponse
+    func getAsset(url: String) async throws -> LearningAsset
 }
