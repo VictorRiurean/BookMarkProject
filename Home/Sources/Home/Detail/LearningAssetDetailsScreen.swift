@@ -41,7 +41,7 @@ public struct LearningAssetDetailsScreen: View {
     
     private var saveButtonIsDisabled: Bool {
         let invalidFormat = newTitle.isEmpty || newContent.isEmpty
-        let noChanges = newTitle == asset.title && newContent == asset.content
+        let noChanges = newTitle == asset.title && newContent == asset.summary
         
         return invalidFormat || noChanges
     }
@@ -60,7 +60,7 @@ public struct LearningAssetDetailsScreen: View {
             Form {
                 newTitleSection
                 
-                newContentSection
+                newSummarySection
                 
                 htmlSection
                 
@@ -69,7 +69,7 @@ public struct LearningAssetDetailsScreen: View {
         }
         .onAppear {
             newTitle = asset.title
-            newContent = asset.content
+            newContent = asset.summary
         }
     }
     
@@ -99,9 +99,9 @@ public struct LearningAssetDetailsScreen: View {
         }
     }
     
-    private var newContentSection: some View {
-        Section("Content:") {
-            TextEditor(text: $asset.content)
+    private var newSummarySection: some View {
+        Section("Summary:") {
+            TextEditor(text: $asset.summary)
                 .frame(height: Constants.editorHeight)
         }
     }
@@ -123,7 +123,7 @@ public struct LearningAssetDetailsScreen: View {
                 
                 Button {
                     asset.title = newTitle
-                    asset.content = newContent
+                    asset.summary = newContent
                     
                     dismiss()
                 } label: {

@@ -13,7 +13,7 @@ public final class LearningAsset {
     public let url: String
     public let type: LearningAssetType
     public var title: String
-    public var content: String
+    public var summary: String
     public var contentHtml: String
     public var tags: [String]
     public var imageUrl: String?
@@ -30,7 +30,7 @@ public final class LearningAsset {
         self.url = url
         self.type = type
         self.title = title
-        self.content = content
+        self.summary = content
         self.contentHtml = contentHtml
         self.tags = tags
         self.imageUrl = imageUrl

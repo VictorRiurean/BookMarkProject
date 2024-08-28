@@ -14,7 +14,7 @@ extension Array where Element == LearningAsset {
         self
             .filter {
                 $0.title.localizedCaseInsensitiveContains(query) ||
-                $0.content.localizedCaseInsensitiveContains(query) ||
+                $0.summary.localizedCaseInsensitiveContains(query) ||
                 $0.tags.first(where: { $0.contains(query) }) !=  nil
             }
     }

@@ -78,7 +78,7 @@ public struct CreateManuallyView: View {
             
             imageUrlSection
             
-            contentSection
+            summarySection
             
             htmlSection
             
@@ -124,8 +124,8 @@ public struct CreateManuallyView: View {
         }
     }
     
-    private var contentSection: some View {
-        Section("Content: *") {
+    private var summarySection: some View {
+        Section("Summary: *") {
             TextEditor(text: $content)
                 .frame(height: Constants.editorHeight)
         }
