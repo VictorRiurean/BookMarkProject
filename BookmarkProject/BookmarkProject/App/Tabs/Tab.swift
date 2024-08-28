@@ -40,12 +40,12 @@ enum Tab: Int, Identifiable, CaseIterable {
     }
     
     @ViewBuilder
-    func makeContentView() -> some View {
+    func makeContentView(_ selectedTab: Binding<Tab>) -> some View {
         switch self {
         case .home:
             HomeScreen()
         case .newResource:
-            NewResourceScreen()
+            NewResourceScreen(selectedTab: selectedTab)
         case .settings:
             SettingsScreen()
         }

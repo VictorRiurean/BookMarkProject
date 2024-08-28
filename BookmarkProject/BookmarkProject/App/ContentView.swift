@@ -26,7 +26,7 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             ForEach(Tab.allCases) { tab in
                 tab
-                    .makeContentView()
+                    .makeContentView($selectedTab)
                     .tabItem {
                         tab.label
                     }
