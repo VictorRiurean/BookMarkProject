@@ -50,16 +50,22 @@ public struct LearningAssetDetailsScreen: View {
     // MARK: Body
     
     public var body: some View {
-        Form {
+        VStack(spacing: .regular) {
             thumbnail
             
-            newTitleSection
+            if let url = URL(string: asset.url) {
+                Link(asset.url, destination: url)
+            }
             
-            newContentSection
-            
-            htmlSection
-            
-            saveButton
+            Form {
+                newTitleSection
+                
+                newContentSection
+                
+                htmlSection
+                
+                saveButton
+            }
         }
         .onAppear {
             newTitle = asset.title
