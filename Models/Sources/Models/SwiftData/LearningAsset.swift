@@ -42,8 +42,17 @@ public enum LearningAssetType: String, CaseIterable, Codable, Hashable {
     case article
     case course
     case podcast
+    case stackOverflow
     case video
     case other
+    
+    public var title: String {
+        if self == .stackOverflow {
+            "StackOverflow"
+        } else {
+            rawValue.capitalized
+        }
+    }
 }
 
 

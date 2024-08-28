@@ -14,6 +14,12 @@ extension LearningAssetType {
         switch self {
         case .article:
             Image(systemName: "book.pages")
+        case .course:
+            Image(systemName: "graduationcap.fill")
+        case .podcast:
+            Image(systemName: "mic")
+        case .stackOverflow:
+            Image(systemName: "square.stack.3d.up.fill")
         case .video:
             Image(systemName: "play.circle")
         case .other:
