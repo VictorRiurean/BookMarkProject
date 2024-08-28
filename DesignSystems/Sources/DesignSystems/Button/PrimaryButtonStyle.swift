@@ -15,7 +15,16 @@ public struct PrimaryButtonStyle: ButtonStyle, @unchecked Sendable {
     @Environment(\.isEnabled) var isEnabled
     
     
+    // MARK: State properties
+    
+    @Binding var isLoading: Bool
+    
+    
     // MARK: Lifecycle
+    
+    public init(_ isLoading: Binding<Bool>) {
+        self._isLoading = isLoading
+    }
     
     public func makeBody(configuration: Configuration) -> some View {
         configuration
@@ -28,14 +37,13 @@ public struct PrimaryButtonStyle: ButtonStyle, @unchecked Sendable {
                 .white
             )
             .clipShape(Capsule())
+            .disabled(isLoading)
     }
-    
-    public init() { }
 }
 
 extension Button {
-    public func primaryStyle() -> some View {
+    public func primaryStyle(_ isLoading: Binding<Bool> = .constant(false)) -> some View {
         self
-            .buttonStyle(PrimaryButtonStyle())
+            .buttonStyle(PrimaryButtonStyle(isLoading))
     }
 }
