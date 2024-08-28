@@ -35,14 +35,12 @@ struct HomeScreen: View {
     
     // MARK: Private properties
     
-    private var assetss: [LearningAsset] {
+    private var filteredAssets: [LearningAsset] {
         if viewModel.debouncedText.isEmpty {
-            LearningAsset.mockLearningAssets
+            assets
         } else {
-            LearningAsset.mockLearningAssets
-                .filter {
-                    $0.title.localizedCaseInsensitiveContains(viewModel.debouncedText)
-                }
+            assets
+                .apply(query: viewModel.debouncedText)
         }
     }
     
@@ -52,7 +50,7 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack(path: $routerPath.path) {
             List {
-                ForEach(assetss, id: \.self) { asset in
+                ForEach(filteredAssets, id: \.self) { asset in
                     HomeListRowView(asset: asset)
                         .frame(height: .xxxLarge)
                         .listRowSeparator(.hidden)
