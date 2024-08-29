@@ -17,7 +17,8 @@ public struct LearningAssetDetailsScreen: View {
     
     private enum Constants {
         static let imageSize: CGFloat = 150.0
-        static let editorHeight: CGFloat = 300.0
+        static let editorHeight: CGFloat = 100.0
+        static let webViewHeight: CGFloat = 300.0
         static let buttonHeight: CGFloat = 50.0
         static let buttonWidth: CGFloat = 120.0
     }
@@ -69,6 +70,8 @@ public struct LearningAssetDetailsScreen: View {
             .scrollContentBackground(.hidden)
         }
         .background(theme.primaryBackgroundColor)
+        .navigationTitle(asset.type.title)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             newTitle = asset.title
             newContent = asset.summary
@@ -112,7 +115,7 @@ public struct LearningAssetDetailsScreen: View {
         if let url = URL(string: asset.url) {
             Section("WebView:") {
                 WebViewRepresentable(url: url)
-                    .frame(height: Constants.editorHeight)
+                    .frame(height: Constants.webViewHeight)
             }
         }
     }

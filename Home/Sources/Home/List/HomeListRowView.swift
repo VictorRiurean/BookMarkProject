@@ -80,5 +80,6 @@ public struct HomeListRowView: View {
     
     private var typeIcon: some View {
         AssetTypeIconView(assetType: asset.type)
+            .frame(width: .xLarge, height: .xLarge)
     }
 }
