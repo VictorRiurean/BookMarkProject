@@ -66,7 +66,9 @@ public struct LearningAssetDetailsScreen: View {
                 
                 saveButton
             }
+            .scrollContentBackground(.hidden)
         }
+        .background(theme.primaryBackgroundColor)
         .onAppear {
             newTitle = asset.title
             newContent = asset.summary
@@ -80,11 +82,10 @@ public struct LearningAssetDetailsScreen: View {
         HStack {
             Spacer()
             
-            AssetThumbnailView(urlString: asset.imageUrl)
-                .frame(
-                    width: Constants.imageSize,
-                    height: Constants.imageSize
-                )
+            AssetThumbnailView(
+                urlString: asset.imageUrl,
+                size: Constants.imageSize
+            )
             
             Spacer()
         }

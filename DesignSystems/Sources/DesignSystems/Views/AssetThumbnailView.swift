@@ -16,6 +16,7 @@ public struct AssetThumbnailView: View {
     
     public let urlString: String?
     public let cornerRadius: CGFloat
+    public let size: CGFloat
     
     
     // MARK: Private properties
@@ -31,7 +32,6 @@ public struct AssetThumbnailView: View {
         Group {
             if let url {
                 LazyImage(url: url)
-                    .frame(width: .xLarge, height: .xLarge)
                     .scaledToFill()
             } else {
                 Image(systemName: "photo")
@@ -39,6 +39,7 @@ public struct AssetThumbnailView: View {
                     .scaledToFit()
             }
         }
+        .frame(width: size, height: size)
         .clipShape(
             RoundedRectangle(cornerRadius: cornerRadius)
         )
@@ -50,10 +51,12 @@ public struct AssetThumbnailView: View {
     
     public init(
         urlString: String?,
-        cornerRadius: CGFloat = .small
+        cornerRadius: CGFloat = .small,
+        size: CGFloat
     ) {
         self.urlString = urlString
         self.cornerRadius = cornerRadius
+        self.size = size
     }
 }
 
@@ -63,12 +66,14 @@ public struct AssetThumbnailView: View {
     VStack {
         AssetThumbnailView(
             urlString: "test",
-            cornerRadius: .small
+            cornerRadius: .small,
+            size: .xxLarge
         )
         
         AssetThumbnailView(
             urlString: "https://picsum.photos/200/300",
-            cornerRadius: .small
+            cornerRadius: .small,
+            size: .xxLarge
         )
     }
 }

@@ -59,9 +59,9 @@ public struct HomeListRowView: View {
     private var thumbnail: some View {
         AssetThumbnailView(
             urlString: asset.imageUrl,
-            cornerRadius: .small
+            cornerRadius: .small,
+            size: .xxLarge
         )
-        .frame(width: .xLarge, height: .xLarge)
     }
     
     private var assetTitle: some View {
