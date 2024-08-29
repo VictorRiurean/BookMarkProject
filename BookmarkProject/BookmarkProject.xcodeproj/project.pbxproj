@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		57A3FE812C7CC494001DCDB3 /* DesignSystems in Frameworks */ = {isa = PBXBuildFile; productRef = 57A3FE802C7CC494001DCDB3 /* DesignSystems */; };
-		57A6F7122C7F7CCA00C18FD4 /* TagHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F7112C7F7CCA00C18FD4 /* TagHStackView.swift */; };
 		57A6F7142C7F879B00C18FD4 /* Array+LearningAssetQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F7132C7F879B00C18FD4 /* Array+LearningAssetQuery.swift */; };
 		57A6F7162C7FA00B00C18FD4 /* ConfirmAssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F7152C7FA00B00C18FD4 /* ConfirmAssetView.swift */; };
 		57A6F7182C7FA7FD00C18FD4 /* NewResourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F7172C7FA7FD00C18FD4 /* NewResourceViewModel.swift */; };
@@ -53,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		57A6F7112C7F7CCA00C18FD4 /* TagHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagHStackView.swift; sourceTree = "<group>"; };
 		57A6F7132C7F879B00C18FD4 /* Array+LearningAssetQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+LearningAssetQuery.swift"; sourceTree = "<group>"; };
 		57A6F7152C7FA00B00C18FD4 /* ConfirmAssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAssetView.swift; sourceTree = "<group>"; };
 		57A6F7172C7FA7FD00C18FD4 /* NewResourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResourceViewModel.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 				57F611C22C7F5FC300207877 /* CreateAutomaticallyView.swift */,
 				57A6F7152C7FA00B00C18FD4 /* ConfirmAssetView.swift */,
 				57F611C02C7F5F8400207877 /* CreateManuallyView.swift */,
-				57A6F7112C7F7CCA00C18FD4 /* TagHStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,7 +449,6 @@
 			files = (
 				57ACD68A2C7D1A65003611DA /* SettingsScreen.swift in Sources */,
 				57A6F7142C7F879B00C18FD4 /* Array+LearningAssetQuery.swift in Sources */,
-				57A6F7122C7F7CCA00C18FD4 /* TagHStackView.swift in Sources */,
 				57C77A522C7E37060052F3D2 /* NewResourceScreen.swift in Sources */,
 				57C025322C7BD1C500CBACD6 /* Tab.swift in Sources */,
 				57A6F7182C7FA7FD00C18FD4 /* NewResourceViewModel.swift in Sources */,

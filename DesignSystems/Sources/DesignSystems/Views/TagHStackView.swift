@@ -5,11 +5,10 @@
 //  Created by Victor on 28/08/2024.
 //
 
-import DesignSystems
 import SwiftUI
 
 
-struct TagHStackView: View {
+public struct TagHStackView: View {
     
     // MARK: Environment
     
@@ -23,7 +22,7 @@ struct TagHStackView: View {
     
     // MARK: Body
     
-    var body: some View {
+    public var body: some View {
         HStack {
             if tags.count <= 5 {
                 ForEach(tags, id: \.self) { tag in
@@ -51,6 +50,13 @@ struct TagHStackView: View {
             
             Spacer()
         }
+    }
+    
+    
+    // MARK: Lifecycle
+    
+    public init(tags: Binding<[String]>) {
+        self._tags = tags
     }
 }
 
