@@ -51,7 +51,7 @@ struct ConfirmAssetView: View {
             
             tagsSection
             
-            saveButton
+            buttonsSection
         }
     }
     
@@ -95,29 +95,52 @@ struct ConfirmAssetView: View {
         }
     }
     
-    private var saveButton: some View {
+    private var buttonsSection: some View {
         Section {
             HStack {
                 Spacer()
                 
-                Button {
-                    createAsset()
-                } label: {
-                    Text("Save")
+                VStack {
+                    saveButton
+                    
+                    discardButton
                 }
-                .primaryStyle()
-                .frame(
-                    width: Constants.buttonWidth,
-                    height: Constants.buttonHeight,
-                    alignment: .center
-                )
-                .disabled(pendingAsset.title.isEmpty)
                 
                 Spacer()
             }
-            
         }
         .listRowBackground(Color.clear)
+    }
+    
+    private var saveButton: some View {
+        Button {
+            createAsset()
+        } label: {
+            Text("Save")
+        }
+        .primaryStyle()
+        .frame(
+            width: Constants.buttonWidth,
+            height: Constants.buttonHeight,
+            alignment: .center
+        )
+        .disabled(pendingAsset.title.isEmpty)
+    }
+    
+    private var discardButton: some View {
+        Button {
+            withAnimation(.easeIn) {
+                parentAsset = nil
+            }
+        } label: {
+            Text("Discard")
+        }
+        .destructiveStyle()
+        .frame(
+            width: Constants.buttonWidth,
+            height: Constants.buttonHeight,
+            alignment: .center
+        )
     }
     
     
