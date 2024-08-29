@@ -62,7 +62,7 @@ public struct LearningAssetDetailsScreen: View {
                 
                 newSummarySection
                 
-                htmlSection
+                webViewSection
                 
                 saveButton
             }
@@ -107,10 +107,10 @@ public struct LearningAssetDetailsScreen: View {
     }
     
     @ViewBuilder
-    private var htmlSection: some View {
-        if !asset.contentHtml.isEmpty {
-            Section("HTML:") {
-                HTMLView(htmlContent: asset.contentHtml)
+    private var webViewSection: some View {
+        if let url = URL(string: asset.url) {
+            Section("WebView:") {
+                WebViewRepresentable(url: url)
                     .frame(height: Constants.editorHeight)
             }
         }

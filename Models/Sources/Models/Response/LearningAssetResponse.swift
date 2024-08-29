@@ -13,7 +13,6 @@ public struct LearningAssetResponse: Decodable {
     public let type: LearningAssetType
     public var title: String
     public var content: String?
-    public var contentHtml: String?
     public var tags: [String]
     public var imageUrl: String?
 }

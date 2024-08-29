@@ -31,6 +31,8 @@ public struct AssetThumbnailView: View {
         Group {
             if let url {
                 LazyImage(url: url)
+                    .frame(width: .xLarge, height: .xLarge)
+                    .scaledToFill()
             } else {
                 Image(systemName: "photo")
                     .resizable()

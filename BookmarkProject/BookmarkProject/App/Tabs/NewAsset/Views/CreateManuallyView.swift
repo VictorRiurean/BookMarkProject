@@ -43,7 +43,6 @@ public struct CreateManuallyView: View {
     @State private var url = ""
     @State private var type: LearningAssetType = .article
     @State private var content = ""
-    @State private var html = ""
     @State private var tags: [String] = []
     @State private var tag = ""
     @State private var imageUrl = ""
@@ -79,8 +78,6 @@ public struct CreateManuallyView: View {
             imageUrlSection
             
             summarySection
-            
-            htmlSection
             
             saveButton
         }
@@ -126,20 +123,6 @@ public struct CreateManuallyView: View {
         }
     }
     
-    private var summarySection: some View {
-        Section("Summary: *") {
-            TextEditor(text: $content)
-                .frame(height: Constants.editorHeight)
-        }
-    }
-    
-    private var htmlSection: some View {
-        Section("HTML: *") {
-            TextEditor(text: $html)
-                .frame(height: Constants.editorHeight)
-        }
-    }
-    
     private var tagsSection: some View {
         Section("Tags: *") {
             HStack {
@@ -166,6 +149,13 @@ public struct CreateManuallyView: View {
         Section("Image URL: *") {
             TextField("Image URL:", text: $imageUrl)
                 .textInputAutocapitalization(.never)
+        }
+    }
+    
+    private var summarySection: some View {
+        Section("Summary: *") {
+            TextEditor(text: $content)
+                .frame(height: Constants.editorHeight)
         }
     }
     
@@ -204,7 +194,6 @@ public struct CreateManuallyView: View {
             type: type,
             title: title,
             content: content,
-            contentHtml: html,
             tags: tags,
             imageUrl: imageUrl
         )
@@ -227,7 +216,6 @@ public struct CreateManuallyView: View {
         type = .article
         title = ""
         content = ""
-        html = ""
         tags = []
         imageUrl = ""
     }

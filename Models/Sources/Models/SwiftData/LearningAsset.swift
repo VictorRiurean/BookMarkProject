@@ -14,7 +14,6 @@ public final class LearningAsset {
     public let type: LearningAssetType
     public var title: String
     public var summary: String
-    public var contentHtml: String
     public var tags: [String]
     public var imageUrl: String?
     
@@ -23,7 +22,6 @@ public final class LearningAsset {
         type: LearningAssetType,
         title: String,
         content: String = "",
-        contentHtml: String = "",
         tags: [String] = [],
         imageUrl: String? = nil
     ) {
@@ -31,7 +29,6 @@ public final class LearningAsset {
         self.type = type
         self.title = title
         self.summary = content
-        self.contentHtml = contentHtml
         self.tags = tags
         self.imageUrl = imageUrl
     }
@@ -63,7 +60,6 @@ extension LearningAsset {
             type: response.type,
             title: response.title,
             content: response.content ?? "",
-            contentHtml: response.contentHtml ?? "",
             tags: response.tags,
             imageUrl: response.imageUrl
         )
@@ -79,7 +75,6 @@ extension LearningAsset: @unchecked Sendable {
             type: .article,
             title: "Mastering Swift Programming",
             content: "This article dives deep into advanced Swift programming techniques...",
-            contentHtml: "<p>This article dives deep into <strong>advanced Swift programming techniques</strong>...</p>",
             tags: ["Swift", "Programming", "iOS"],
             imageUrl: "https://www.example.com/images/swift-article.jpg"
         ),
@@ -88,7 +83,6 @@ extension LearningAsset: @unchecked Sendable {
             type: .course,
             title: "Build Your First iOS App",
             content: "In this tutorial, you'll learn how to build your first iOS app using Swift and Xcode...",
-            contentHtml: "<h1>Build Your First iOS App</h1><p>In this tutorial, you'll learn how to build your first iOS app using <em>Swift</em> and <em>Xcode</em>...</p>",
             tags: ["Swift", "iOS", "Xcode", "Beginner"],
             imageUrl: "https://www.example.com/images/ios-tutorial.jpg"
         ),
@@ -111,7 +105,6 @@ extension LearningAsset: @unchecked Sendable {
             url: "https://www.example.com/swift-course",
             type: .course,
             title: "Complete Swift Programming Course",
-            contentHtml: "<h2>Course Overview</h2><p>This course covers everything from the basics to advanced topics in Swift programming...</p>",
             tags: ["Swift", "Course", "Programming", "Advanced"],
             imageUrl: "https://www.example.com/images/swift-course.jpg"
         )
