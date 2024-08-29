@@ -16,9 +16,19 @@ import SwiftUI
 @MainActor
 struct HomeScreen: View {
     
+    // MARK: Screen state
+    
+    enum HomeScreenState {
+        case list
+        case noAssets
+        case noSearchResults
+    }
+    
+    
     // MARK: Environment
     
     @Environment(\.modelContext) private var modelContext
+    @Environment(Theme.self) var theme
     
     
     // MARK: Query
@@ -44,20 +54,32 @@ struct HomeScreen: View {
         }
     }
     
+    private var state: HomeScreenState {
+        if assets.isEmpty {
+            .noAssets
+        } else if filteredAssets.isEmpty {
+            .noSearchResults
+        } else {
+            .list
+        }
+    }
+    
     
     // MARK: Body
     
     var body: some View {
         NavigationStack(path: $routerPath.path) {
-            List {
-                ForEach(filteredAssets, id: \.self) { asset in
-                    HomeListRowView(asset: asset)
-                        .frame(height: .xxxLarge)
-                        .listRowSeparator(.hidden)
+            Group {
+                switch state {
+                case .list:
+                    listView
+                case .noAssets:
+                    noAssetsView
+                case .noSearchResults:
+                    noSearchResultsView
                 }
-                .onDelete(perform: deleteItems)
             }
-            .listStyle(.plain)
+            .background(theme.primaryBackgroundColor)
             .navigationTitle("Your assets")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Search for asset")
@@ -69,6 +91,38 @@ struct HomeScreen: View {
                 }
             }
         }
+    }
+    
+    
+    // MARK: Subviews
+    
+    private var listView: some View {
+        List {
+            ForEach(filteredAssets, id: \.self) { asset in
+                HomeListRowView(asset: asset)
+                    .frame(height: .xxxLarge)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+            }
+            .onDelete(perform: deleteItems)
+        }
+        .listStyle(.plain)
+    }
+    
+    private var noAssetsView: some View {
+        ContentUnavailableView(
+            "You have assets saved.",
+            systemImage: "tray",
+            description: Text("Please create assets from the New Asset tab.")
+        )
+    }
+    
+    private var noSearchResultsView: some View {
+        ContentUnavailableView(
+            "No results for this query.",
+            systemImage: "exclamationmark.magnifyingglass",
+            description: Text("Please try a different search term.")
+        )
     }
     
     

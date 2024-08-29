@@ -5,6 +5,7 @@
 //  Created by Victor on 27/08/2024.
 //
 
+import DesignSystems
 import Models
 import SwiftUI
 
@@ -17,6 +18,11 @@ struct NewAssetScreen: View {
     private enum Constants {
         static let pickerWidth: CGFloat = 150.0
     }
+    
+    
+    // MARK: Environment
+    
+    @Environment(Theme.self) var theme
     
     
     // MARK: State properties
@@ -44,6 +50,9 @@ struct NewAssetScreen: View {
                     )
                 }
             }
+            .background(theme.primaryBackgroundColor)
+            .navigationTitle("Create a new asset")
+            .navigationBarTitleDisplayMode(.inline)
             .alert(
                 "Failed to generate asset",
                 isPresented: $viewModel.didFailToGenerate
