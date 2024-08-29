@@ -69,9 +69,11 @@ struct NewAssetScreen: View {
         Picker("What is your favorite color?", selection: $viewModel.isManualModeOn) {
             Text("Manual")
                 .tag(true)
+                .accessibilityIdentifier("Manual button")
             
             Text("Auto")
                 .tag(false)
+                .accessibilityIdentifier("Auto button")
         }
         .pickerStyle(.segmented)
         .frame(width: Constants.pickerWidth)

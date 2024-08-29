@@ -94,6 +94,7 @@ public struct CreateManuallyView: View {
             TextField(text: $title) {
                 Text("Title cannot be empty")
             }
+            .accessibilityIdentifier("Title TextField")
         }
     }
     
@@ -103,6 +104,7 @@ public struct CreateManuallyView: View {
                 Text("Please enter a valid URL")
             }
             .textInputAutocapitalization(.never)
+            .accessibilityIdentifier("URL TextField")
             
             if urlAlreadyExists {
                 Text("URL already exists")
@@ -184,6 +186,7 @@ public struct CreateManuallyView: View {
                     alignment: .center
                 )
                 .disabled(saveButtonIsDisabled)
+                .accessibilityIdentifier("Save manually created asset")
                 
                 Spacer()
             }
