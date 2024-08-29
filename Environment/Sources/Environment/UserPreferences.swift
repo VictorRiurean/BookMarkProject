@@ -14,7 +14,7 @@ public class UserPreferences {
     // MARK: Storage
     
     class Storage {
-        @AppStorage("TEST") public var test: Bool = false
+        @AppStorage("isFirstLaunch") public var isFirstLaunch: Bool = true
     }
     
     
@@ -31,9 +31,9 @@ public class UserPreferences {
     
     // MARK: Public properties
     
-    public var test: Bool {
+    public var isFirstLaunch: Bool {
         didSet {
-            storage.test = test
+            storage.isFirstLaunch = isFirstLaunch
         }
     }
     
@@ -41,6 +41,6 @@ public class UserPreferences {
     // MARK: Lifecycle
     
     private init() {
-        test = storage.test
+        isFirstLaunch = storage.isFirstLaunch
     }
 }

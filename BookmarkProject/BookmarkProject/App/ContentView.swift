@@ -6,6 +6,7 @@
 //
 
 import DesignSystems
+import Environment
 import Models
 import SwiftUI
 import SwiftData
@@ -18,6 +19,7 @@ struct ContentView: View {
     
     @State private var selectedTab: Tab = .home
     @State private var theme = Theme.shared
+    @State private var userPreferences = UserPreferences.shared
     
     
     // MARK: Body
@@ -35,6 +37,13 @@ struct ContentView: View {
         }
         .applyTheme(theme)
         .withEnvironments()
+        .onAppear {
+            if userPreferences.isFirstLaunch {
+                userPreferences.isFirstLaunch = false
+                
+                selectedTab = .newAsset
+            }
+        }
     }
 }
 
