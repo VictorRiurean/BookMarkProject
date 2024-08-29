@@ -31,7 +31,6 @@ struct CreateAutomaticallyView: View {
     @Binding var selectedTab: Tab
     
     @State private var asset: LearningAsset?
-    @State private var didFailToGenerate = false
     @State private var isPrimaryButtonLoading = false
     @State private var url = ""
     
@@ -49,17 +48,11 @@ struct CreateAutomaticallyView: View {
                 ConfirmAssetView(
                     selectedTab: $selectedTab,
                     parentAsset: $asset,
-                    asset: asset
+                    pendingAsset: asset
                 )
             } else {
                 generateAssetView
             }
-        }
-        .alert(
-            "Failed to generate asset",
-            isPresented: $didFailToGenerate
-        ) {
-            Button("OK", role: .cancel) { }
         }
     }
     
@@ -100,9 +93,7 @@ struct CreateAutomaticallyView: View {
                     asset = try await generateAsset(url)
                     
                     url = ""
-                } catch {
-                    didFailToGenerate = true
-                }
+                } catch { }
                 
                 isPrimaryButtonLoading = false
             }
